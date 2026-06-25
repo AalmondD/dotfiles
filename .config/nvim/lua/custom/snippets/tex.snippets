@@ -1,0 +1,401 @@
+# cuantica	#################################################
+
+snippet bra "\bra{\psi}"
+	\\bra{${1:\\psi}}$0
+snippet ket "\ket{\psi}"
+	\\ket{${1:\\psi}}$0
+snippet bck "\bra{\psi} A \ket{\psi}"
+	\\bra{${1:\\psi}}${2:}\\ket{${3:\\psi}}$0 
+
+snippet hbar "\hbar"
+	\\hbar $0
+snippet approx "\approx "
+	\\approx $0 
+
+snippet com "\left[ , \right]"
+	\\left[ ${1:\\hat{H^{(N)\}\}} , $2  \\right]$0
+
+snippet observable "\expval{A}"
+	\\expval{${1:\hat A}}$0
+
+
+
+
+################### MIE ########################
+snippet dcampo "\dot \phi_{0I}"
+  \\dot \\phi_{${1: } ${2:I}}$0 
+
+snippet campo "\phi_{0I}"
+  \\phi_{${1: } ${2:I}}$0
+
+snippet conn "\Gamma^\mu{}_{\nu \alpha}"
+  \\Gamma^{${1:\\mu}}{}_{${2:\\nu} ${3:\\alpha}}$0
+
+snippet metric "g_{\mu \nu}"
+  g${1:_}{${2:\\mu} ${3: \\nu}}$0
+
+# Derivadas #################################################
+snippet partial "\frac{\partial x }{\partial y}"
+	\\frac{\\partial ${1:x} }{\\partial ${2:y}}$0
+snippet derivada "\frac{d x}{d y}"
+	\\frac{d ${1:x} }{d ${2:y}}$0
+snippet dot "\dot x"
+	\\dot $0
+snippet limit "\underset{x \rightarrow x_0}{lim}x"
+	\\underset{${1:x} \\rightarrow ${2:x_0}}{lim}${0:f(x)}
+snippet tpartial "\partial_{\mu} x"
+  \\partial_{${1:\\mu}} $0
+snippet covar "\nabla_{\mu} x"
+  \\nabla_{${1:\\mu}} $0
+snippet covpartial "\partial^{\mu} x"
+  \\partial^{${1:\\mu}} $0
+
+# Trigonometricas############################################
+snippet sin "\sin{\theta}"
+	\\sin{${1:\\theta}}$0
+snippet cos "\cos{\theta}"
+	\\cos{${1:\\theta}}$0
+snippet tan "\tan{\theta}"
+	\\tan{${1:\\theta}}$0
+snippet sinh "\sinh{\theta}"
+	\\sinh{${1:\\theta}}$0
+snippet cosh "\cosh{\theta}"
+	\\cosh{${1:\\theta}}$0
+snippet tanh "\tanh{\theta}"
+	\\tanh{${1:\\theta}}$0
+
+# espacios numericos	#######################################
+snippet bb "\mathbb{}"
+	\\mathbb{$1}$0
+snippet identidad "\mathbb{I}"
+	\\mathbb{I}$0
+snippet real "\mathbb{R}"
+	\\mathbb{R}$0
+snippet inf "\infty"
+	\\infty$0
+snippet complex "\mathbb{C}"
+	\\mathbb{C}$0
+snippet im "Im(a)"
+	Im\\left($1\\right)$0
+snippet re "Re()"
+	Re\\left($1\\right)$0
+
+# Funciones #################################################
+snippet func "f(x)"
+	${1:f}\\left(${2:x}\\right)=$0
+snippet func2 "f(x,y)"
+	${1:f}\\left(${2:x},${3:y}\\right)=$0
+snippet func3 "f(x,y,z)"
+	${1:f}\\left(${2:x},${3:y},${4:z}\\right)=$0
+
+# misc	#####################################################
+
+snippet def "\equiv"
+  \\equiv $0
+snippet times "\times"
+	\\times $0
+snippet times10 "\times10^"
+	\\times10^{$1}$0
+snippet eq:ref "Ref equation"
+	eq. \\ref{eq:$1} $0
+snippet gat "\begin{gather} ... \label{eq:} ... \end{gather}"
+	\\begin{gather*}
+		$1 $0
+	\\end{gather*}
+snippet sub "_{}"
+	_{$1} $0
+snippet sqrt "\sqrt{}"
+	\\sqrt{${1:\\alpha:}} $0
+snippet dot "\dot"
+	\\dot $0
+snippet ddot "\dot"
+	\\ddot $0
+snippet abs "|a|"
+	\\left|$1\\right|$0
+snippet noteq "\neq "
+	\\neq $0
+snippet frac "\frac{}{}"
+	\\frac{${1:1}}{${2:2}}$0
+snippet under "\underset{under}{equation}"
+	\\underset{${1:}}{${2:x}}$0
+snippet rarrow "\rightarrow"
+	\\rightarrow $0
+snippet larrow "\rightarrow"
+	\\leftarrow $0
+snippet text "\text{}"
+	\\text{$1}$0
+snippet parentesis "()"
+	\\left($1\\right)$0
+snippet parentesis2 "()"
+	\\left[$1\\right]$0
+snippet cubed "^2"
+	^2$0
+snippet bfvec "\mathbf{}"
+  \\mathbf{${1: r}}$0
+snippet align "\begin{align}...\end{align}"
+  \\begin{align}
+    $0 
+  \\end{align}
+snippet rarrow "\Rightarrow"
+  \\Rightarrow
+snippet gather "\begin{gather}...\end{gather}"
+  \\begin{gather}
+    $0 
+  \\end{gather}
+snippet ungather "\begin{gather*}...\end{gather*}"
+  \\begin{gather*}
+    $0 
+  \\end{gather*}
+snippet minipage "\begin{minipage}{width} ... \end{minipage}"
+  \\begin{minipage}{${1:0.48} \textwidth}
+
+  $2 
+  \\end{minipage}
+  $0
+snippet img "\begin{figure} ... \end{figure}"
+  \\begin{figure}
+    \\begin{center}
+      \\includegraphics[width=0.95\\textwidth]{img/$1}
+    \\end{center}
+    \\caption{$2}\\label{fig:$3}
+  \\end{figure}
+
+# Vector ####################################################
+snippet ov "\overrightarrow "
+	\\overrightarrow $0
+snippet vvector3 "Vector de 3 dimensiones."
+    \\begin{bmatrix}
+        ${1:x} \\\\
+        ${2:y} \\\\
+        ${3:z} 
+    \\end{bmatrix}$0 
+snippet hvector3
+    \begin{bmatrix} ${1:x} & ${2:y} & ${3:z} \end{bmatrix}$0 
+snippet vvector4 "Vector de 4 dimensiones."
+    \\begin{bmatrix}
+        ${1:x} \\\\
+        ${2:y} \\\\
+        ${3:z} \\\\
+        ${4:w}
+    \\end{bmatrix}$0 
+snippet hvector4
+    \begin{bmatrix} ${1:x} & ${2:y} & ${3:z} & ${4:w} \end{bmatrix}$0 
+
+# matrices ##################################################
+snippet matrix22
+    \\begin{bmatrix}
+        ${1:a11} & ${2:a12} \\\\
+        ${3:a21} & ${4:a22}
+    \\end{bmatrix} $0 
+snippet matrix33
+    \\begin{bmatrix}
+        ${1:a11} & ${2:a12} & ${3:a13} \\\\
+        ${4:a21} & ${5:a22} & ${6:a23} \\\\
+        ${7:a31} & ${8:a32} & ${9:a33}
+    \\end{bmatrix} $0 
+snippet matrix44
+    \\begin{bmatrix}
+        ${1:a11} & ${2:a12} & ${3:a13} & ${4:a14} \\\\
+        ${5:a21} & ${6:a22} & ${7:a23} & ${8:a24} \\\\
+        ${9:a31} & ${10:a32} & ${11:a33} & ${12:a34} \\\\
+        ${13:a41} & ${14:a42} & ${15:a43} & ${16:a44}
+    \\end{bmatrix} $0 
+
+snippet dmatrix22
+    \\begin{bmatrix}
+        \\frac{\\partial ${1:x}_{1}^1}{\\partial ${2:y}_{2}^1} & \\frac{\\partial ${3:x}_{1}^1}{\\partial ${4:y}_{2}^1} \\\\
+        \\frac{\\partial ${5:x}_{1}^2}{\\partial ${6:y}_{2}^2} & \\frac{\\partial ${7:x}_{1}^2}{\\partial ${8:y}_{2}^2}
+    \\end{bmatrix}$0 
+snippet dmatrix33
+    \\begin{bmatrix}
+        \\frac{\\partial ${1:x}_{1}^1}{\\partial ${2:y}_{2}^1} & \\frac{\\partial ${3:x}_{1}^1}{\\partial ${4:y}_{2}^1} & \\frac{\\partial ${5:x}_{1}^1}{\\partial ${6:y}_{3}^1} \\\\
+        \\frac{\\partial ${7:x}_{1}^2}{\\partial ${8:y}_{2}^2} & \\frac{\\partial ${9:x}_{1}^2}{\\partial ${10:y}_{2}^2} & \\frac{\\partial ${11:x}_{1}^2}{\\partial ${12:y}_{3}^2} \\\\
+        \\frac{\\partial ${13:x}_{1}^3}{\\partial ${14:y}_{2}^3} & \\frac{\\partial ${15:x}_{1}^3}{\\partial ${16:y}_{2}^3} & \\frac{\\partial ${17:x}_{1}^3}{\\partial ${18:y}_{3}^3}
+    \\end{bmatrix}$0 
+snippet dmatrix4x4
+    \\begin{bmatrix}
+        \\frac{\\partial ${1:x}_{1}^1}{\\partial ${2:y}_{2}^1} & \\frac{\\partial ${3:x}_{1}^1}{\\partial ${4:y}_{2}^1} & \\frac{\\partial ${5:x}_{1}^1}{\\partial ${6:y}_{3}^1} & \\frac{\\partial ${7:x}_{1}^1}{\\partial ${8:y}_{4}^1} \\\\
+        \\frac{\\partial ${9:x}_{1}^2}{\\partial ${10:y}_{2}^2} & \\frac{\\partial ${11:x}_{1}^2}{\\partial ${12:y}_{2}^2} & \\frac{\\partial ${13:x}_{1}^2}{\\partial ${14:y}_{3}^2} & \\frac{\\partial ${15:x}_{1}^2}{\\partial ${16:y}_{4}^2} \\\\
+        \\frac{\\partial ${17:x}_{1}^3}{\\partial ${18:y}_{2}^3} & \\frac{\\partial ${19:x}_{1}^3}{\\partial ${20:y}_{2}^3} & \\frac{\\partial ${21:x}_{1}^3}{\\partial ${22:y}_{3}^3} & \\frac{\\partial ${23:x}_{1}^3}{\\partial ${24:y}_{4}^3} \\\\
+        \\frac{\\partial ${25:x}_{1}^4}{\\partial ${26:y}_{2}^4} & \\frac{\\partial ${27:x}_{1}^4}{\\partial ${28:y}_{2}^4} & \\frac{\\partial ${29:x}_{1}^4}{\\partial ${30:y}_{3}^4} & \\frac{\\partial ${31:x}_{1}^4}{\\partial ${32:y}_{4}^4}
+    \\end{bmatrix}$0 
+
+# template	#################################################
+
+snippet caja "\caja{color}{Titulo}{Cuerpo}"
+	\\caja{${1:blue}}{${2:Titulo}}{
+		${0}
+	}
+
+
+snippet teo "\caja{color}{Titulo}{Cuerpo}"
+	\\caja{green}{${2:Titulo}}{
+		${0}
+	}
+
+snippet nota "\caja{color}{Titulo}{Cuerpo}"
+	\\caja{black}{${2:Titulo}}{
+		${0}
+	}
+
+snippet plantilla "Template para tomar notas."
+	\\documentclass{article}
+
+	\\usepackage[most]{tcolorbox}
+	\\usepackage{physics}
+	\\usepackage{graphicx}
+	\\usepackage{float}
+	\\usepackage{amsmath}
+	\\usepackage{amssymb}
+  \\usepackage{amsthm}
+  \\usepackage{empheq}
+  \\usepackage{mdframed}
+  \\usepackage{hyperref}
+  \\usepackage{booktabs}
+  \\usepackage{lipsum}
+  \\usepackage{soul}
+  \\usepackage{color}
+  \\usepackage{xcolor}
+  \\usepackage{psfrag}
+  \\usepackage{pgfplots}
+  \\usepackage{chngcntr}
+  \\usepackage{bm}
+  \\usepackage{cancel}
+
+
+
+	\\usepackage[utf8]{inputenc}
+	\\usepackage[a4paper, margin=1in]{geometry} % Controla los márgenes
+	\\usepackage{titling}
+
+	\\title{${1:Titulo}}
+	\\author{Angel Almonacid}
+	\\date{\\today}
+
+	\\renewcommand{\\maketitlehooka}{%
+		\\centering
+		\\vspace*{0.05cm} % Espacio vertical antes del título
+	}
+
+	\\renewcommand{\\maketitlehookd}{%
+		\\vspace*{2cm} % Espacio vertical después de la fecha
+	}
+
+	\\newcommand{\\caja}[3]{%
+		\\begin{tcolorbox}[colback=#1!5!white,colframe=#1!25!black,title=#2]
+			#3
+		\\end{tcolorbox}%
+	}
+
+	\\begin{document}
+	\\maketitle
+
+	\\section{${2:Tema}}
+	$0
+
+	\\end{document}
+
+
+
+
+############### BEAMER #################################
+snippet beamertemp "Template beamer"
+  
+  \\documentclass[10pt]{beamer}
+  \\usetheme[background=light, sectionpage=progressbar, progressbar=frametitle]{metropolis}
+  \\usepackage{mdframed}
+  \\usepackage{xcolor}
+  \\usepackage{caption}
+  \\usepackage{ragged2e}
+  \\usepackage{multimedia}
+  \\usepackage{hyperref}
+  \\usepackage{amsmath}
+  \\usepackage{placeins}
+  \\usepackage{url}
+  \\usepackage{tikz}
+  \\usetikzlibrary{arrows.meta,calc,angles,quotes}
+  \\captionsetup{font=scriptsize}
+
+
+  \\apptocmd{\\frame}{}{\\justifying}{} % Allow optional arguments after frame.
+
+
+
+  \\newcommand{\\emptyfootline}{\\setbeamertemplate{footline}{}}
+
+
+
+
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Use metropolis theme
+
+  \\title{}
+
+  \\date{}
+  \\author{Angel David Almonacid Diaz}
+  \\institute{}
+  \\titlegraphic{
+    \\begin{tikzpicture}[overlay,remember picture]
+    \\node[anchor=south east, xshift=-0.3cm, yshift=0.3cm] at (current page.south east) {
+    %\includegraphics[width=3cm]{img/escudo_unal.png}
+  };
+
+  \\end{tikzpicture}
+  }
+
+
+  \\setbeamertemplate{footline}{
+    \\begin{beamercolorbox}[wd=\\paperwidth,ht=2ex,dp=1ex,right]{author in head/foot}
+      \\hspace{1em} 
+      \\hfill
+    \\insertsectionhead ~:~\\insertsubsectionhead
+      \\hspace{1em}
+    \\end{beamercolorbox}
+  }
+  \\makeatletter
+  \\setlength{\metropolis@titleseparator@linewidth}{2pt}
+  \\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+  \\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+  \\makeatother
+
+
+  \\usebeamercolor[bg]{background canvas}
+
+
+  \\begin{document}
+    \\maketitle
+    \\begin{frame}
+      \\frametitle{Contenidos}
+      \\tableofcontents
+    \\end{frame}
+
+
+   \\emptyfootline
+
+   \\begin{frame}{References}
+     \\setbeamertemplate{footline}{ }               
+   \\end{frame}
+  %
+  \\end{document}
+
+snippet frame "\begin{frame} ... \end{frame}"
+  \\begin{frame}{$1}
+  $0 
+  \\end{frame}
+
+snippet columns "\begin{columns}[c] ... \end{columns}"
+  \\begin{columns}[c]
+    \\column{0.48\\textwidth}
+    $1 
+    \\column{0.48\\textwidth}
+    $2
+  \\end{columns}
+  $0
+
+###################TEXTO#####################################
+
+snippet textbf "\textbf{Texto}"
+  \\textbf{$1} $0
