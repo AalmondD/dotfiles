@@ -43,3 +43,17 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+#
+#
+#
+# Muestra el entorno de Conda en el prompt (compatible con agnoster)
+_conda_sync_virtualenv() {
+    if [[ -n $CONDA_PREFIX ]]; then
+        export VIRTUAL_ENV="$CONDA_PREFIX"
+    else
+        unset VIRTUAL_ENV
+    fi
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _conda_sync_virtualenv
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
